@@ -22,6 +22,7 @@ let remindersController = {
   },
 
   create: (req, res) => {
+    const loggedInUser = req.user;
     let reminder = {
       id: database.cindy.reminders.length + 1,
       title: req.body.title,
