@@ -9,9 +9,9 @@ I also needed to research on Youtube and Google the following things:
 
 Monte Lee:
 I worked on the following tasks:
-1. <Insert Some Task Here> - This task is responsible for xyz functionality.
-2. <Insert Some Task Here> - This task is responsible for xyz functionality.
-3. <Insert Some Task Here> - This task is responsible for xyz functionality.
+1. delete function - This task is responsible for deleting reminder without the login functionality.
+2. set up github repository
+3. This task is responsible for xyz functionality.
 
 Hillary Lam:
 I worked on the following tasks:
