@@ -16,9 +16,4 @@ I worked on the following tasks:
 
 Hillary Lam:
 I worked on the following tasks:
-1. <Insert Some Task Here> - This task is responsible for xyz functionality.
-2. <Insert Some Task Here> - This task is responsible for xyz functionality.
-3. <Insert Some Task Here> - This task is responsible for xyz functionality.
-
-I also needed to research on Youtube and Google the following things:
-1. <Insert Video or Link to thing you needed to research>
+1. <Implement passport> - I set up passport authentication
