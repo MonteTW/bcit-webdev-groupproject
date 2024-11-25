@@ -4,28 +4,44 @@ const database = [
     name: "Jimmy Smith",
     email: "jimmy123@gmail.com",
     password: "jimmy123!",
-    role: "user"
+    role: "user",
+    reminders: [{
+      id: 1,
+      title: "buy milk",
+      description: "go to Costco buy 2L milk",
+      completed: false
+    },
+    {
+      id: 2,
+      title: "python quiz review",
+      description: "complete python lab and do the review",
+      completed: true
+    }
+  ]
   },
   {
     id: 2,
     name: "Johnny Doe",
     email: "johnny123@gmail.com",
     password: "johnny123!",
-    role: "user"
+    role: "user",
+    reminders: []
   },
   {
     id: 3,
     name: "Jonathan Chen",
     email: "jonathan123@gmail.com",
     password: "jonathan123!",
-    role: "user"
+    role: "user",
+    reminders: []
   },
   {
     id: 4,
     name: "Administrator",
     email: "admin@sudoersd.com",
     password: "admin!",
-    role: "admin"
+    role: "admin",
+    reminders: []
   },
 ];
 
