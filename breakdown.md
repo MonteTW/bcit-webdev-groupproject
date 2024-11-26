@@ -12,9 +12,8 @@ I also needed to watch on Term Project Prep Videos
 # Monte Lee:
 ## Nov 18th, 2024
 I worked on the following tasks:
-1. <Insert Some Task Here> - This task is responsible for xyz functionality.
-2. <Insert Some Task Here> - This task is responsible for xyz functionality.
-3. <Insert Some Task Here> - This task is responsible for xyz functionality.
+1. delete function - This task is responsible for deleting reminder without the login functionality.
+2. set up github repository
 
 ## Nov 24th, 2024
 I worked on the following tasks:
