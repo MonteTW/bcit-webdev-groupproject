@@ -4,7 +4,7 @@ const database = [
     name: "Jimmy Smith",
     email: "jimmy123@gmail.com",
     password: "jimmy123!",
-    role: "user",
+    role: "admin",
     reminders: [{
       id: 1,
       title: "buy milk",
