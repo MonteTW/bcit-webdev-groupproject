@@ -26,7 +26,7 @@ const database = [
     password: "johnny123!",
     role: "user",
     reminders: [{
-      id: 1,
+      id: 5,
       title: "take money from Tom",
       description: "go see Tom and get 5K",
       completed: false
@@ -48,6 +48,26 @@ const database = [
     password: "admin!",
     role: "admin",
     reminders: []
+  },
+  {
+    id: "nuree",
+    name: "nuree king",
+    email: "nuree@na",
+    password: "a",
+    role: "user",
+    reminders: [{
+      id: 52,
+      title: "DEFAULT TASK",
+      description: "GO KILL BOBBY AND STEAL MONEY",
+      completed: false
+    },
+    {
+      id: 522,
+      title: "Another",
+      description: "drinking water",
+      completed: true
+    },
+  ]
   },
 ];
 

@@ -4,9 +4,10 @@ I worked on the following tasks:
 1. <create breakdown.md> - I created breakdown.md file and uploaded to git repository 'breakdown'.
 2. <Implement edit feature> - this feature reflect changes from the 'edit' page.
 
-I also needed to watch on Term Project Prep Videos
- :
-1. <https://learn.bcit.ca/d2l/le/content/1063392/Home>
+## Dec 1st, 2024
+I worked on the following tasks:
+1. <create Register> - I created routers for register.ejs page, register() and registerSubmit() functions that recieves user input and checks existing emails then add to userModel.
+2. <update edit and update> - I updated edit and update feature to check user's id.
 
 
 # Monte Lee:
