@@ -35,17 +35,19 @@ let remindersController = {
     res.redirect("/reminders");
   },
 
+  // adding edit with user check
   edit: (req, res) => {
+    let index_user = database.findIndex((user) => user.id === req.user.id);
     let reminderToFind = req.params.id;
-    let searchResult = database.cindy.reminders.find(function (reminder) {
-      return reminder.id == reminderToFind;
-    });
+    let searchResult = database[index_user].reminders.find((reminder) => reminder.id == reminderToFind);
     res.render("reminder/edit", { reminderItem: searchResult });
   },
 
+  // adding update
   update: (req, res) => {
+    let index_user = database.findIndex((user) => user.id === req.user.id);
     let reminderToFind = req.params.id;
-    let searchResult = database.cindy.reminders.find(function (reminder) {
+    let searchResult = database[index_user].reminders.find(function (reminder) {
     return reminder.id == reminderToFind;});
     searchResult.title = req.body.title;
     searchResult.description = req.body.description;
