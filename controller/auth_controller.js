@@ -16,7 +16,7 @@ let authController = {
   loginSubmit: async (req, res, next) => {
     await passport.authenticate("local", { failureRedirect: '/auth/login', successRedirect: '/reminders'      
     })(req, res, next)
-},
+ },
   admin: (req, res) => {
     req.sessionStore.all((err, sessions)=> {
       if (err) {
@@ -54,14 +54,14 @@ registerSubmit: async (req, res) => {
     } else {
       await db.user.create({
         data:{
-          name,
-          email,
-          password,
+      name,
+      email,
+      password,
           role: "user"
         },
       }) }
       res.redirect("/reminders")
-        } catch (err) {
+  } catch (err) {
     console.error(err);
   }}
 }
