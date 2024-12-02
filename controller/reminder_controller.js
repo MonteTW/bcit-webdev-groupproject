@@ -1,8 +1,9 @@
-let database = require("../database");
+let {database} = require("../models/userModel");
 
 let remindersController = {
   list: (req, res) => {
-    res.render("reminder/index", { reminders: database.cindy.reminders });
+    let index = database.findIndex((user) => user.id === req.user.id)
+    res.render("reminder/index", { reminders: database[index].reminders });
   },
 
   new: (req, res) => {
@@ -10,7 +11,7 @@ let remindersController = {
   },
 
   listOne: (req, res) => {
-    let reminderToFind = req.params.id;
+    let reminderToFind = req.user.id;
     let searchResult = database.cindy.reminders.find(function (reminder) {
       return reminder.id == reminderToFind;
     });
@@ -22,6 +23,7 @@ let remindersController = {
   },
 
   create: (req, res) => {
+    const loggedInUser = req.user;
     let reminder = {
       id: database.cindy.reminders.length + 1,
       title: req.body.title,
