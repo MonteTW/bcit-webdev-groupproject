@@ -11,10 +11,8 @@ let authController = {
     res.render("auth/register");
   },
 
-  loginSubmit: (req, res, next) => {
-    passport.authenticate("local", { failureRedirect: '/auth/login', successRedirect: '/reminders'      
-    })(req, res, next)
-  },
+  loginSubmit: passport.authenticate("local", { failureRedirect: '/auth/login', successRedirect: '/reminders'      
+  }),
   admin: (req, res) => {
     req.sessionStore.all((err, sessions)=> {
       if (err) {
@@ -46,7 +44,7 @@ registerSubmit: async (req, res) => {
   }
 
   try {
-    const existingUser = await userModel.findEmail(email);
+    const existingUser = await userModel.findOne(email);
     if (existingUser) {
       console.log(userModel.database)
       return res.status(400).send('Email is already registered!');
