@@ -1,5 +1,6 @@
 const passport = require("../middleware/passport");
-let database = require("../models/userModel");
+const { userModel } = require("../models/userModel");
+const { v4: uuid } = require('uuid');
 
 let authController = {
   login: (req, res) => {
@@ -36,10 +37,38 @@ let authController = {
   //   console.log("req",req);
   // },
 
+// making register submit
+registerSubmit: async (req, res) => {
+  const { name, email, password } = req.body;
 
-  registerSubmit: (req, res) => {
-    // implement
-  },
-};
+  if (!name || !email || !password) {
+    return res.status(400).send('All fields (name, email, password) are required!');
+  }
+
+  try {
+    const existingUser = await userModel.findEmail(email);
+    if (existingUser) {
+      console.log(userModel.database)
+      return res.status(400).send('Email is already registered!');
+    } else {
+      const newUser = {
+        // unique id module
+      id: uuid(),
+      name,
+      email,
+      password,
+      role: 'user',
+      reminders: [],
+    };
+    console.log(userModel.database)
+    console.log(newUser)
+    userModel.database.push(newUser);
+    console.log(userModel.database)
+    res.redirect('/auth/login'); }
+  } catch (err) {
+    console.error(err);
+}
+}
+}
 
 module.exports = authController;

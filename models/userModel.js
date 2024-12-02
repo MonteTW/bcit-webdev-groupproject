@@ -52,6 +52,7 @@ const database = [
 ];
 
 const userModel = {
+  database,
   findOne: (email) => {
     const user = database.find((user) => user.email === email);
     if (user) {
@@ -65,6 +66,15 @@ const userModel = {
       return user;
     }
     throw new Error(`Couldn't find user with id: ${id}`);
+  },
+  // user email checker
+  findEmail: (email) => {
+    const user = database.find((user) => user.email === email);
+    if (user) {
+      return user;
+    } else {
+      return null;
+    }
   },
 };
 

@@ -54,6 +54,11 @@ app.get("/reminder/:id", ensureAuthenticated, reminderController.listOne);
 
 app.get("/reminder/:id/edit", ensureAuthenticated, reminderController.edit);
 
+// register fixing
+app.get("/auth/register", authController.register);
+
+app.post("/auth/register", authController.registerSubmit);
+
 app.post("/reminder/", ensureAuthenticated, reminderController.create);
 
 // Implement this yourself
@@ -63,10 +68,12 @@ app.post("/reminder/update/:id", ensureAuthenticated, reminderController.update)
 app.post("/reminder/delete/:id", ensureAuthenticated, reminderController.delete);
 
 // We will fix this soon.
-app.get("/register", authController.register);
+
+
+
 app.get("/auth/login", authController.login);
 app.get("/admin", isAdmin,authController.admin);
-app.post("/register", authController.registerSubmit);
+app.post("/auth/register", authController.registerSubmit);
 app.post("/auth/login", authController.loginSubmit);
 app.post("/auth/revoke", authController.revoke);
 
