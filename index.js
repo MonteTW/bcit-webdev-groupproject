@@ -26,7 +26,7 @@ app.use(
 );
 
 const passport = require("./middleware/passport");
-const { ensureAuthenticated, isAdmin } = require("./middleware/checkAuth")
+const { ensureAuthenticated, isAdmin, forwardAuthenticated } = require("./middleware/checkAuth")
 
 app.use(express.urlencoded({ extended: false }));
 app.use(passport.initialize());
@@ -58,7 +58,7 @@ app.get("/reminder/:id", ensureAuthenticated, reminderController.listOne);
 app.get("/reminder/:id/edit", ensureAuthenticated, reminderController.edit);
 
 // register fixing
-app.get("/auth/register", authController.register);
+app.get("/auth/register", forwardAuthenticated, authController.register);
 
 app.post("/auth/register", authController.registerSubmit);
 
@@ -74,7 +74,7 @@ app.post("/reminder/delete/:id", ensureAuthenticated, reminderController.delete)
 
 
 
-app.get("/auth/login", authController.login);
+app.get("/auth/login", forwardAuthenticated, authController.login);
 app.get("/admin", isAdmin,authController.admin);
 app.post("/auth/register", authController.registerSubmit);
 app.post("/auth/login", authController.loginSubmit);
