@@ -10,6 +10,7 @@ const getUserByEmailIdAndPassword = async (email, password) => {
   }
   return null;
 };
+
 const getUserById = async (id) => {
   let user = await userModel.findById(id);
   if (user) {
