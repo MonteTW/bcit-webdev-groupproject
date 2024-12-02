@@ -2,8 +2,8 @@ let {database} = require("../models/userModel");
 
 let remindersController = {
   list: (req, res) => {
-    let index = database.findIndex((user) => user.id === req.user.id)
-    res.render("reminder/index", { reminders: database[index].reminders });
+    let index_user = database.findIndex((user) => user.id === req.user.id)
+    res.render("reminder/index", { reminders: database[index_user].reminders });
   },
 
   new: (req, res) => {
@@ -11,8 +11,9 @@ let remindersController = {
   },
 
   listOne: (req, res) => {
-    let reminderToFind = req.user.id;
-    let searchResult = database.cindy.reminders.find(function (reminder) {
+    let index_user = database.findIndex((user) => user.id === req.user.id)
+    let reminderToFind = req.params.id;
+    let searchResult = database[index_user].reminders.find(function (reminder) {
       return reminder.id == reminderToFind;
     });
     if (searchResult != undefined) {
@@ -23,14 +24,14 @@ let remindersController = {
   },
 
   create: (req, res) => {
-    const loggedInUser = req.user;
+    let index_user = database.findIndex((user) => user.id === req.user.id)
     let reminder = {
-      id: database.cindy.reminders.length + 1,
+      id: database[index_user].reminders.length + 1,
       title: req.body.title,
       description: req.body.description,
       completed: false,
     };
-    database.cindy.reminders.push(reminder);
+    database[index_user].reminders.push(reminder);
     res.redirect("/reminders");
   },
 
@@ -55,11 +56,11 @@ let remindersController = {
 
   delete: (req, res) => {
     // Implement this code
+    let index_user = database.findIndex((user) => user.id === req.user.id)
     let reminderToFind = req.params.id;
-    let index = database.cindy.reminders.findIndex((reminder) => reminder.id == reminderToFind);
-    database.cindy.reminders.splice(index,1)
+    let index_reminder = database[index_user].reminders.findIndex((reminder) => reminder.id == reminderToFind);
+    database[index_user].reminders.splice(index_reminder,1)
     res.redirect("/reminders")
-
   },
 };
 
