@@ -11,8 +11,10 @@ let authController = {
     res.render("auth/register");
   },
 
-  loginSubmit: passport.authenticate("local", { failureRedirect: '/auth/login', successRedirect: '/reminders'      
-  }),
+  loginSubmit: async (req, res, next) => {
+    await passport.authenticate("local", { failureRedirect: '/auth/login', successRedirect: '/reminders'      
+    })(req, res, next)
+},
   admin: (req, res) => {
     req.sessionStore.all((err, sessions)=> {
       if (err) {
