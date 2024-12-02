@@ -1,5 +1,9 @@
+const { PrismaClient } = require("@prisma/client");
+
 const express = require("express");
+const db = new PrismaClient();
 const app = express();
+
 const path = require("path");
 const ejsLayouts = require("express-ejs-layouts");
 const session = require("express-session");
