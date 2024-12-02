@@ -27,4 +27,9 @@ I worked on the following tasks:
 # Hillary Lam:
 ## Nov 18th, 2024
 I worked on the following tasks:
-1. <Implement passport> - I set up passport authentication
+1. Implement passport - I set up passport authentication
+
+## Dec 1, 2024
+I worked on the following tasks:
+1. Add delete functionality to reminders - modified original code to match new database
+2. Add create functionality to reminders - modified original code to match new database
