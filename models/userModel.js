@@ -25,7 +25,13 @@ const database = [
     email: "johnny123@gmail.com",
     password: "johnny123!",
     role: "user",
-    reminders: []
+    reminders: [{
+      id: 1,
+      title: "take money from Tom",
+      description: "go see Tom and get 5K",
+      completed: false
+    },
+    ]
   },
   {
     id: 3,
