@@ -9,6 +9,11 @@ I worked on the following tasks:
 1. <create Register> - I created routers for register.ejs page, register() and registerSubmit() functions that recieves user input and checks existing emails then add to userModel.
 2. <update edit and update> - I updated edit and update feature to check user's id.
 
+## Dec 2nd, 2024
+I worked on the following tasks:
+1. <Integrate Register> - I integrated register feature to work with the actual database.
+2. <update index.html and navbar.ejs> - I updated layout and buttons in index.html and navbar.ejs.
+
 
 # Monte Lee:
 ## Nov 18th, 2024
