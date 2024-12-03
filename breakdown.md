@@ -25,6 +25,12 @@ I worked on the following tasks:
 1. revoke session - add the page of admin and make sure only admin user are allowed to acces and revoke the on-going sessions
 2. add authentication to pages - add the authentication to pages that should only allow logged-in user to view
 
+## Dec 2nd, 2024
+I worked on the following tasks:
+1. Parisma - set up the package.json and built  the database with basic data
+2. Login - Fix the passport and userModel of findOne and findID function
+3. Forward authentication - Add the authentication to index.js
+
 # Hillary Lam:
 ## Nov 18th, 2024
 I worked on the following tasks:
