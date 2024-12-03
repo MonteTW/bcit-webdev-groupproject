@@ -27,15 +27,27 @@ let remindersController = {
     }
   },
 
-  create: (req, res) => {
-    let index_user = database.findIndex((user) => user.id === req.user.id)
-    let reminder = {
-      id: database[index_user].reminders.length + 1,
-      title: req.body.title,
-      description: req.body.description,
-      completed: false,
-    };
-    database[index_user].reminders.push(reminder);
+  // create: (req, res) => {
+  //   let index_user = database.findIndex((user) => user.id === req.user.id)
+  //   let reminder = {
+  //     id: database[index_user].reminders.length + 1,
+  //     title: req.body.title,
+  //     description: req.body.description,
+  //     completed: false,
+  //   };
+  //   database[index_user].reminders.push(reminder);
+  //   res.redirect("/reminders");
+  // },
+  create: async (req, res) => {
+    let user = req.user.id;
+    await db.reminder.create({
+      data:{
+        title: req.body.title,
+        description: req.body.description,
+        completed: false,
+        user: { connect: {id: user } }
+      }
+    })
     res.redirect("/reminders");
   },
 
