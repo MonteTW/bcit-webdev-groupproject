@@ -1,6 +1,8 @@
 const passport = require("../middleware/passport");
 const { userModel } = require("../models/userModel");
-const { v4: uuid } = require('uuid');
+
+const { PrismaClient } = require("@prisma/client");
+const db = new PrismaClient();
 
 let authController = {
   login: (req, res) => {
@@ -11,10 +13,10 @@ let authController = {
     res.render("auth/register");
   },
 
-  loginSubmit: (req, res, next) => {
-    passport.authenticate("local", { failureRedirect: '/auth/login', successRedirect: '/reminders'      
+  loginSubmit: async (req, res, next) => {
+    await passport.authenticate("local", { failureRedirect: '/auth/login', successRedirect: '/reminders'      
     })(req, res, next)
-  },
+ },
   admin: (req, res) => {
     req.sessionStore.all((err, sessions)=> {
       if (err) {
@@ -46,29 +48,22 @@ registerSubmit: async (req, res) => {
   }
 
   try {
-    const existingUser = await userModel.findEmail(email);
+    const existingUser = await userModel.findOne(email);
     if (existingUser) {
-      console.log(userModel.database)
       return res.status(400).send('Email is already registered!');
     } else {
-      const newUser = {
-        // unique id module
-      id: uuid(),
+      await db.user.create({
+        data:{
       name,
       email,
       password,
-      role: 'user',
-      reminders: [],
-    };
-    console.log(userModel.database)
-    console.log(newUser)
-    userModel.database.push(newUser);
-    console.log(userModel.database)
-    res.redirect('/auth/login'); }
+          role: "user"
+        },
+      }) }
+      res.redirect("/reminders")
   } catch (err) {
     console.error(err);
-}
-}
+  }}
 }
 
 module.exports = authController;

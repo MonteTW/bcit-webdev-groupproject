@@ -36,11 +36,11 @@ I worked on the following tasks:
 2. Login - Fix the passport and userModel of findOne and findID function
 3. Forward authentication - Add the authentication to index.js
 
+
 ## Dec 3rd, 2024
 I worked on the following tasks:
 1. View single reminder - I adjusted the code to make the view button on reminders list work.
 2. delete single reminder - I adjusted the code to make the delete button on single reminder works.
-
 
 # Hillary Lam:
 ## Nov 18th, 2024
