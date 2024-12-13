@@ -12,9 +12,9 @@
             <span class="label label-danger">False</span>
           <% } %>
         </h4>
-
-        <a class="btn btn-warning" href=<%= "/reminder/" + reminderItem.id + "/edit" %>>Edit</a>
-
+        <form class="editForm" method = "GET" action=<%= "/reminder/" + reminderItem.id + "/edit" %>>
+          <button type="submit" class="btn btn-warning">Edit</button>
+        </form>
         <form class="deleteForm "method="POST" action=<%= "/reminder/delete/" + reminderItem.id %>>
           <button type="submit" class="btn btn-danger">Delete</button>
         </form>

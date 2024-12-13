@@ -56,25 +56,31 @@ let remindersController = {
     res.redirect("/reminders");
   },
 
-  // adding edit with user check
-  edit: (req, res) => {
-    let index_user = database.findIndex((user) => user.id === req.user.id);
-    let reminderToFind = req.params.id;
-    let searchResult = database[index_user].reminders.find((reminder) => reminder.id == reminderToFind);
-    res.render("reminder/edit", { reminderItem: searchResult });
+  // edit reminder
+  edit: async (req, res) => {
+    let reminderToFind = Number(req.params.id);
+    const reminderItem = await db.reminder.findUnique({
+      where: {
+        id: reminderToFind
+      }
+    })
+    res.render("reminder/edit", { reminderItem: reminderItem})
   },
 
   // adding update
-  update: (req, res) => {
-    let index_user = database.findIndex((user) => user.id === req.user.id);
-    let reminderToFind = req.params.id;
-    let searchResult = database[index_user].reminders.find(function (reminder) {
-    return reminder.id == reminderToFind;});
-    searchResult.title = req.body.title;
-    searchResult.description = req.body.description;
-    searchResult.completed = req.body.completed === "true";
+  update: async (req, res) => {
+    let reminderToFind = Number(req.params.id);
+    await db.reminder.update({
+      where: {
+        id: reminderToFind,
+      },
+      data: {
+        title: req.body.title,
+        description: req.body.description,
+        completed: req.body.completed === "true"
+      },
+    })
     res.redirect("/reminders");
-    // implement this code
   },
 
   delete: async (req, res) => {
@@ -86,8 +92,8 @@ let remindersController = {
         id: reminderToFind
       }
     })
-    res.redirect("/reminders")
-  },
+    res.redirect("/reminders");
+  }
 };
 
 module.exports = remindersController;

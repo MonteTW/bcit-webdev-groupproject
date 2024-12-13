@@ -1,4 +1,4 @@
-.deleteForm {
+.deleteForm, .editForm {
   display: inline-block
 }
 
