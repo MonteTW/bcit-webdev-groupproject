@@ -9,6 +9,11 @@ I worked on the following tasks:
 1. <create Register> - I created routers for register.ejs page, register() and registerSubmit() functions that recieves user input and checks existing emails then add to userModel.
 2. <update edit and update> - I updated edit and update feature to check user's id.
 
+## Dec 2nd, 2024
+I worked on the following tasks:
+1. <Integrate Register> - I integrated register feature to work with the actual database.
+2. <update index.html and navbar.ejs> - I updated layout and buttons in index.html and navbar.ejs.
+
 
 # Monte Lee:
 ## Nov 18th, 2024
@@ -31,6 +36,12 @@ I worked on the following tasks:
 2. Login - Fix the passport and userModel of findOne and findID function
 3. Forward authentication - Add the authentication to index.js
 
+
+## Dec 3rd, 2024
+I worked on the following tasks:
+1. View single reminder - I adjusted the code to make the view button on reminders list work.
+2. delete single reminder - I adjusted the code to make the delete button on single reminder works.
+
 # Hillary Lam:
 ## Nov 18th, 2024
 I worked on the following tasks:
@@ -40,3 +51,8 @@ I worked on the following tasks:
 I worked on the following tasks:
 1. Add delete functionality to reminders - modified original code to match new database
 2. Add create functionality to reminders - modified original code to match new database
+
+## Dec 12, 2024
+I worked on the following tasks:
+1. Edit reminder - Adjusted code to make it work
+2. Update reminder - Adjusted coded to make it work
