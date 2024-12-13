@@ -51,3 +51,8 @@ I worked on the following tasks:
 I worked on the following tasks:
 1. Add delete functionality to reminders - modified original code to match new database
 2. Add create functionality to reminders - modified original code to match new database
+
+## Dec 12, 2024
+I worked on the following tasks:
+1. Edit reminder - Adjusted code to make it work
+2. Update reminder - Adjusted coded to make it work
